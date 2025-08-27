@@ -1,19 +1,21 @@
 # Core dependencies for Chasing Your Tail (CYT)
-requests>=2.28.0
-cryptography>=40.0.0
+# Security update: August 27, 2025 - Critical vulnerability fixes
+requests>=2.32.5  # CVE fixes: CVE-2024-47081 (netrc leak, fixed in 2.32.4), CVE-2024-35195 (cert bypass, fixed in 2.32.0), CVE-2023-32681 (proxy auth leak, fixed in 2.31.0)
+cryptography>=45.0.6  # CVE fixes: CVE-2024-12797 (OpenSSL vuln, fixed in 44.0.1), CVE-2024-26130 (NULL pointer, fixed in 42.0.4), CVE-2023-50782 (timing attack, fixed in 42.0.0)
 
 # Optional dependencies for enhanced features
 # Uncomment as needed:
+# Updated August 2025 with latest secure versions
 
 # For web dashboard (future enhancement)
-# flask>=2.3.0
-# flask-socketio>=5.3.0
+# flask>=3.1.2
+# flask-socketio>=5.5.1
 
 # For advanced data analysis
-# pandas>=1.5.0
-# numpy>=1.24.0
-# matplotlib>=3.7.0
+# pandas>=2.3.2
+# numpy>=2.3.2
+# matplotlib>=3.10.5
 
 # For testing
-# pytest>=7.0.0
-# pytest-cov>=4.0.0
+# pytest>=8.3.3
+# pytest-cov>=6.2.1
