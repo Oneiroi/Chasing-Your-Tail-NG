@@ -35,6 +35,11 @@ All paths, API keys, and timing parameters are centralized in `config.json`:
 
 ## Common Development Commands
 
+### Development Notes
+- **No formal testing framework**: pytest is commented out in requirements.txt - testing done manually with demo data
+- **No linting/formatting tools**: Code quality maintained through manual review
+- **Security-first development**: All changes must maintain SQL injection prevention and encrypted credentials
+
 ### Security Setup (REQUIRED FIRST TIME)
 ```bash
 # Install secure dependencies
@@ -139,6 +144,18 @@ The system now automatically extracts GPS coordinates from Kismet databases and 
   - Activity heatmaps and intensity zones
   - Temporal analysis with time-based pattern detection
 - **Multi-location Tracking**: Detects devices following across different locations with visual tracking paths
+
+### Testing & Quality Assurance
+```bash
+# Manual testing workflow (no formal test framework)
+python3 surveillance_analyzer.py --demo  # Test with safe demo data
+python3 probe_analyzer.py --days 1       # Test analysis with recent data only
+python3 chasing_your_tail.py             # Verify security message appears
+
+# Verify core functionality
+ps aux | grep kismet                      # Check Kismet status (Darwin/macOS)
+python3 cyt_gui.py                       # Test GUI interface
+```
 
 ### Ignore List Management
 ```bash
